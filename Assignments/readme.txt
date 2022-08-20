@@ -1,8 +1,8 @@
 Data Bhau SQL Workshop
 
-
 In Assignments docx files Dataset Links will be given with solutions.
 SQL Assignments files are also given you can open them in sql query editor to see solutions
+
 
 
 ASSIGNMENT FOR CLASS 1 - INTRODUCTION TO SQL BY DATA BHAU 
