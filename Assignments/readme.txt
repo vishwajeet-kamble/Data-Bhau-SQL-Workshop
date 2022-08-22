@@ -1,4 +1,4 @@
-Data Bhau SQL Workshop
+#Data-Bhau-SQL-Workshop
 
 In Assignments .docx file Drive Dataset Links will be given with solutions.
 SQL Assignments files are also given you can open them in sql query editor.
