@@ -1,8 +1,8 @@
 Data Bhau SQL Workshop
 
-In Assignments docx files Dataset Links will be given with solutions.
-SQL Assignments files are also given you can open them in sql query editor to see solutions
-
+In Assignments .docx file Drive Dataset Links will be given with solutions.
+SQL Assignments files are also given you can open them in sql query editor.
+Change Directory location to your saved dataset csv file from the drive link TO LOAD DATA IN TABLE using CSV to see solutions
 
 
 ASSIGNMENT FOR CLASS 1 - INTRODUCTION TO SQL BY DATA BHAU 
