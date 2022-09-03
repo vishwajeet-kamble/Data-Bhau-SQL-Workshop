@@ -58,3 +58,79 @@ show variables like "secure_file_priv";
 
 SHOW GLOBAL VARIABLES LIKE 'local_infile';
 set global local_infile = 1;
+
+
+-- To Load data to outfile in program data mysql folder
+Select * from table_name INFILE 'C:\ProgramData\MySQL\MySQL Server 8.0\Uploads\sample_outfile.csv'
+INTO TABLE customer
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'    -- WRITE SINGLE " IN  COLON ' '
+LINES TERMINATED BY '\n'
+
+   
+/*
+To Change Datatype to date
+https://www.mysqltutorial.org/mysql-date_format/
+
+Specifier	Meaning
+	%a		Three-characters abbreviated weekday name e.g., Mon, Tue, Wed, etc.
+	%b		Three-characters abbreviated month name e.g., Jan, Feb, Mar, etc.
+	%c		Month in numeric e.g., 1, 2, 3…12
+	%D		Day of the month with English suffix e.g., 0th, 1st, 2nd, etc.
+	%d		Day of the month with leading zero if it is 1 number e.g., 00, 01,02, …31
+	%e		Day of the month without leading zero e.g., 1,2,…31
+	%f		Microseconds in the range of 000000..999999
+	%H		Hour in 24-hour format with leading zero e.g., 00..23
+	%h		Hour in 12-hour format with leading zero e.g., 01, 02…12
+	%I		Same as %h
+	%i		Minutes with leading zero e.g., 00, 01,…59
+	%j		Day of year with leading zero e.g., 001,002,…366
+	%k		Hour in 24-hour format without leading zero e.g., 0,1,2…23
+	%l		Hour in 12-hour format without leading zero e.g., 1,2…12
+	%M		Full month name e.g., January, February,…December
+	%m		Month name with leading zero e.g., 00,01,02,…12
+	%p		AM or PM, depending on other time specifiers
+	%r		Time in 12-hour format hh:mm:ss AM or PM
+	%S		Seconds with leading zero 00,01,…59
+	%s		Same as %S
+	%T		Time in 24-hour format hh:mm:ss
+	%U		Week number with leading zero when the first day of week is Sunday e.g., 00,01,02…53
+	%u		Week number with leading zero when the first day of week is Monday e.g., 00,01,02…53
+	%V		Same as %U; it is used with %X
+	%v		Same as %u; it is used with %x
+	%W		Full name of weekday e.g., Sunday, Monday,…, Saturday
+	%w		Weekday in number (0=Sunday, 1= Monday,etc.)
+	%X		Year for the week in four digits where the first day of the week is Sunday; often used with %V
+	%x		Year for the week, where the first day of the week is Monday, four digits; used with %v
+	%Y		Four digits year e.g., 2000 and 2001.
+	%y		Two digits year e.g., 10,11,and 12.
+	%%		Add percentage (%) character to the output
+	The following are some commonly used date format strings:
+
+	DATE_FORMAT string	Formatted date
+	%Y-%m-%d				2013-07-04
+	%e/%c/%Y				4/7/2013
+	%c/%e/%Y				7/4/2013
+	%d/%m/%Y				4/7/2013
+	%m/%d/%Y				7/4/2013
+	%e/%c/%Y %H:%i			4/7/2013 11:20
+	%c/%e/%Y %H:%i			7/4/2013 11:20
+	%d/%m/%Y %H:%i			4/7/2013 11:20
+	%m/%d/%Y %H:%i			7/4/2013 11:20
+	%e/%c/%Y %T				4/7/2013 11:20
+	%c/%e/%Y %T				7/4/2013 11:20
+	%d/%m/%Y %T				4/7/2013 11:20
+	%m/%d/%Y %T				7/4/2013 11:20
+	%a %D %b %Y				Thu 4th Jul 2013
+	%a %D %b %Y %H:%i		Thu 4th Jul 2013 11:20
+	%a %D %b %Y %T			Thu 4th Jul 2013 11:20:05
+	%a %b %e %Y				Thu Jul 4 2013
+	%a %b %e %Y %H:%i		Thu Jul 4 2013 11:20
+	%a %b %e %Y %T			Thu Jul 4 2013 11:20:05
+	%W %D %M %Y				Thursday 4th July 2013
+	%W %D %M %Y %H:%i		Thursday 4th July 2013 11:20
+	%W %D %M %Y %T			Thursday 4th July 2013 11:20:05
+	%l:%i %p %b %e, %Y		7/4/2013 11:20
+	%M %e, %Y				4-Jul-13
+	%a, %d %b %Y %T			Thu, 04 Jul 2013 11:20:05
+*/
