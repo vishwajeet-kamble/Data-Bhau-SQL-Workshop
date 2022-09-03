@@ -1,6 +1,8 @@
 SQL IMPORTANT QUERIES
 
 /*
+	To get datatype automatically without creating table using csv or excel file use following - 
+	
 	1. install csvkit by opening anaconda prompt
 	   type --> "pip install csvkit"
 	2. Go to anaconda promt
