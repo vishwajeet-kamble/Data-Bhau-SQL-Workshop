@@ -74,6 +74,40 @@ LINES TERMINATED BY '\n'
 To Change Datatype to date
 https://www.mysqltutorial.org/mysql-date_format/
 
+-- To Chane datatype from Text to Date we can perform following steps
+
+for example consider following table
+
+create table Loan_Amt(
+Coll_id text, 
+L_Id text , 
+Loan_dt text, 
+Loan_Amt int
+);
+
+
+insert into Loan_Amt values
+	("1901","1001","30-Mar-14","7000000"),
+	("1902","1001","30-Mar-14","2500000"),
+	("1903","1002","01-Jun-14","5900000"),
+	("1904","1002","01-Jun-14","2000000"),
+	("1905","1003","01-Jun-14","5000000");
+
+
+update Loan_Amt
+set Loan_dt = str_to_date(Loan_dt,'%d-%b-%Y');
+
+alter table 
+	Loan_Amt
+modify column
+	Loan_dt date;
+    
+select * from Loan_Amt;
+
+describe loan_amt;
+
+
+
 Specifier	Meaning
 	%a		Three-characters abbreviated weekday name e.g., Mon, Tue, Wed, etc.
 	%b		Three-characters abbreviated month name e.g., Jan, Feb, Mar, etc.
